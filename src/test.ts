@@ -90,3 +90,37 @@ type Goods = {
 const banana: Goods = {
   banana: "45",
 };
+
+function identify<T>(params: T): T {
+  return params;
+}
+
+let output1 = identify<string>("myString");
+let output2 = identify<number>(10);
+
+function reverse<T>(params: T[]): T[] {
+  return params.reverse();
+}
+
+const arrRev1 = reverse<string>(["1", "2"]);
+// console.log(arrRev1); // ['2','1']
+const arrREv2 = reverse<number>([4, 5]);
+// console.log(arrREv2); // [5,4]
+
+type Todo = {
+  title: string;
+  description?: string;
+  completed: boolean;
+};
+
+function updateTodo(todo: Todo, filsedUpdate: Partial<Todo>): Todo {
+  return { ...todo, ...filsedUpdate };
+}
+
+const todo1: Todo = {
+  title: "Clean the kitchen",
+  description: "Clean all dishes and floors",
+  completed: false,
+};
+
+const update1 = updateTodo(todo1, { completed: true });
