@@ -124,3 +124,13 @@ const todo1: Todo = {
 };
 
 const update1 = updateTodo(todo1, { completed: true });
+
+function greeting() {
+  return "Hello world";
+}
+
+type Greeting = ReturnType<typeof greeting>; // string
+
+function multiply(a: number, b: number) {
+  return a * b;
+}
